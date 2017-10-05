@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <h1>Posts</h1>
 
 <table class="table table-striped table-hover ">
@@ -36,3 +37,6 @@
 <br>
 
 <%= link_to 'Nuevo Post', new_post_path, class: 'btn btn-primary' %>
+<% if can?(:update, User) %>
+  <%= link_to 'Panel de Control', pages_dashboard_path, class: 'btn btn-primary' %>
+<% end %>
