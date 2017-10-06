@@ -1,1 +1,18 @@
 <h1>Panel de Control</h1>
+
+<table class="table">
+  <th>Email</th>
+  <th>Nombre</th>
+  <th>Rol</th>
+  <th>Dar Privilegios</th>
+  <th>Quitar Privilegios</th>
+  <% @user.each do |user| %>
+  <tr>
+    <td> <%= user.email %> </td>
+    <td> <%= user.name %> </td>
+    <td> <%= user.role %> </td>
+    <td> <%= link_to 'Admin', admin_path(user), method: :post, class: 'btn btn-sm btn-warning' %> </td>
+    <td> <%= link_to 'Visita', visitor_path(user), method: :post, class: 'btn btn-sm btn-warning' %> </td>
+  </tr>
+  <% end %>
+</table>
